@@ -1,0 +1,13 @@
+<p>noticia-detalhe works! ID: {{id}}</p>
+<div class="col-md-4">
+    <div class="row">
+        <img [src]="caminhoImage">
+    </div>
+    <div class="row">
+        <button (click)="exibirMensagem()">Teste</button>
+    </div>
+    <div class="row">
+        <input [(ngModel)]="x" type="text">
+        <p>Valor de X: {{x}}</p>
+    </div>
+</div>

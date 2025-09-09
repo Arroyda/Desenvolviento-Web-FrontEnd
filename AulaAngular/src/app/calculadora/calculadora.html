@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <label>Número 1</label>
+            <input [(ngModel)]="num1" type="number" placeholder="Primeiro Número">
+        </div>
+
+        <div class="col-md-4">
+            <Label>Número 2</Label>
+            <input [(ngModel)]="num2" type="number" placeholder="Segundo Némuro">
+        </div>
+
+        <div class="row">
+
+            <div id="butão" class="col-md-2">
+                <br>
+                <button (click)="somar()">Somar</button>
+            </div>
+
+            <div id="butão" class="col-md-2">
+                <br>
+                <button (click)="subtrair()">Subtrair</button>
+            </div>
+
+            <div id="butão" class="col-md-2">
+                <br>
+                <button (click)="multiplicar()">Multiplicar</button>
+            </div>
+
+            <div id="butão" class="col-md-2">
+                <br>
+                <button (click)="dividir()">Dividir</button>
+            </div>
+
+            <div id="butão" class="col-md-2">
+                <br>
+                <label>Valor Total: {{resultado}}</label>
+            </div>
+
+        </div>
+        
+    </div>
+</div>

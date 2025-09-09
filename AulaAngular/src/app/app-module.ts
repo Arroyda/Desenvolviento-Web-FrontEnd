@@ -7,7 +7,15 @@ import { MenuSuperior } from './menu-superior/menu-superior';
 import { Noticia } from './noticia/noticia';
 import { Destaque } from './destaque/destaque';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ListaCliente } from './lista-cliente/lista-cliente';
+import { ListarCliente } from './listar-cliente/listar-cliente';
+import { Home } from './home/home';
+import { Calculadora } from './calculadora/calculadora';
+import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontrada';
+import { TelaPai } from './tela-pai/tela-pai';
+import { TelaFilho1 } from './tela-filho1/tela-filho1';
+import { TelaFilho2 } from './tela-filho2/tela-filho2';
+import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,13 +23,21 @@ import { ListaCliente } from './lista-cliente/lista-cliente';
     MenuSuperior,
     Noticia,
     Destaque,
-    ListaCliente
+    ListarCliente,
+    Home,
+    Calculadora,
+    PaginaNaoEncontrada,
+    TelaPai,
+    TelaFilho1,
+    TelaFilho2,
+    NoticiaDetalhe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
