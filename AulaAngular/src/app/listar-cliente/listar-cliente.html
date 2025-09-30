@@ -1,6 +1,7 @@
+
 <div class="row mt-3 mb-3">
     <div class="col-md-9">
-        <input type="text" class="form-control" placeholder="Pesquisar clientes..." />
+        <input [(ngModel)]="nome" type="text" class="form-control" placeholder="Pesquisar clientes..." />
     </div>
     <div class="col-md-3">
         <button type="button" class="btn btn-secondary">Pesquisar</button>
@@ -10,5 +11,58 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">TABELA</div>
+    <div class="col">
+        <input type="checkbox" id="mostrarTabela" [(ngModel)]="mostrarTabela" />
+        <label for="mostrarTabela"> Mostrar Tabela</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        @if(mostrarTabela) {
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (c of clientes; track $index) {
+                <tr>
+                    <th scope="row">{{c.id}}</th>
+                    <td [ngStyle]="{'background-color': 
+                        c.nome === nome ? 
+                        'yellow' : 'white'}">{{c.nome}}</td>
+                    <td>{{c.celular}}</td>
+                    <td [ngClass]="{'SaoPaulo': c.cidade === 'São Paulo'}">{{c.cidade}}</td>
+                    <td>
+                        @switch (c.cidade) {
+                        @case ("São Paulo") {
+                        <span class="badge bg-success">Ativo</span>
+                        }
+                        @case ("Rio de Janeiro") {
+                        <span class="badge bg-warning text-dark">Pendente</span>
+                        }
+                        @default {
+                        <span class="badge bg-secondary">Inativo</span>
+                        }
+                        }
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="clienteSelecionado= c">Selecionar</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+            
+        </table>
+        }
+    </div>
+
+</div>
+<div> 
+    {{clienteSelecionado | json}}
 </div>

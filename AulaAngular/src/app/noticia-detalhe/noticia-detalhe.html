@@ -1,13 +1,9 @@
-<p>noticia-detalhe works! ID: {{id}}</p>
-<div class="col-md-4">
-    <div class="row">
-        <img [src]="caminhoImage">
-    </div>
-    <div class="row">
-        <button (click)="exibirMensagem()">Teste</button>
-    </div>
-    <div class="row">
-        <input [(ngModel)]="x" type="text">
-        <p>Valor de X: {{x}}</p>
-    </div>
-</div>
+<!--Interpolação-->
+<p>noticia-detalhe works! Id: {{ id }}</p>
+<!--Property Binding-->
+<img [src]="caminhoImagem">
+<!--Event Binding-->
+<button (click)="exibirMensagem()">Mensagem</button>
+<!--Two-way Binding-->
+<input [(ngModel)]="x" type="text">
+<p>Valor de x: {{ x }}</p>
